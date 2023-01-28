@@ -3,7 +3,7 @@
 /*
  *  Filename:           listType.cpp
  * 
- *  Purpose:            The purpose of this program is to 
+ *  Purpose:            Implementation file for listType.h
  * 
  *  Author:             Zachary Charles Stewart
  *  Student ID:         105903414

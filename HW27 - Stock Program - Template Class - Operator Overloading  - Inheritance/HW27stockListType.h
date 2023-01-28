@@ -3,7 +3,7 @@
 /*
  *  Filename:           stockListType.h
  * 
- *  Purpose:            The purpose of this program is to 
+ *  Purpose:            Header file for stockListType.h
  * 
  *  Author:             Zachary Charles Stewart
  *  Student ID:         105903414

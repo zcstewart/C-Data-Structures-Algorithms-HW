@@ -3,8 +3,7 @@
 /*
  *  Filename:           stockType.cpp
  * 
- *  Purpose:            The purpose of this program is to implement the member
- *                      functions of the stockType class.
+ *  Purpose:            Implementation file for stockType.h
  * 
  *  Author:             Zachary Charles Stewart
  *  Student ID:         105903414

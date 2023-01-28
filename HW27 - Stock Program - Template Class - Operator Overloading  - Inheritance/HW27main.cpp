@@ -3,9 +3,7 @@
 /*
  *  Filename:           main.cpp
  * 
- *  Purpose:            The purpose of this program is to implement all of the 
- *                      included header and implementation files to create a 
- *                      working program.
+ *  Purpose:            Main program for newString, listType, stockListType, and stockType files.
  * 
  *  Author:             Zachary Charles Stewart
  *  Student ID:         105903414

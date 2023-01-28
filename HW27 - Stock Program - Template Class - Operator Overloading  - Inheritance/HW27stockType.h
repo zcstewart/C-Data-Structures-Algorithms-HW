@@ -3,9 +3,7 @@
 /*
  *  Filename:           stockType.h
  * 
- *  Purpose:            The purpose of this program is to declare the
- *                      member variables and member functions of the stockType
- *                      class.+
+ *  Purpose:            Header file for class stockType
  * 
  *  Author:             Zachary Charles Stewart
  *  Student ID:         105903414

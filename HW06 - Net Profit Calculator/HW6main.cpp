@@ -55,7 +55,7 @@ int main()
     double priceMU = 0;         //Price after applied markup
     double priceSale = 0;       //Price after sale   
     double profitNet = 0;       //Profit after merchandise sold on sale
-    double amountMU = 0;
+    double amountMU = 0;        //Amount of markup
     
     //Declare "junk" char variable to read in '$'
     char junk;

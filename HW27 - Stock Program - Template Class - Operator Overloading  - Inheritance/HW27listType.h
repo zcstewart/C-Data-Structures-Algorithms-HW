@@ -3,7 +3,7 @@
 /*
  *  Filename:           listType.h
  * 
- *  Purpose:            The purpose of this program is to 
+ *  Purpose:            Header file for template list class listType
  * 
  *  Author:             Zachary Charles Stewart
  *  Student ID:         105903414

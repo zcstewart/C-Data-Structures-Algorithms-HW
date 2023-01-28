@@ -3,13 +3,7 @@
 /*
  *  Filename:           main.cpp
  * 
- *  Purpose:            The purpose of this program is to gouge innocent
- *                      civilians and low income residents out of all their
- *                      money, forcing them to spend more than they need to
- *                      in order to survive. This money will then skip 3 tiers
- *                      of management and go straight to the owner's pocket.
- *                      The rich get richer, and the poor get poorer. It's 
- *                      practically win-win. This program will determine
+ *  Purpose:            The purpose of this program is to determine
  *                      how many apartment units should be rented and the
  *                      price that they should be rented at in order to
  *                      maximize profit. The program will prompt the user for 

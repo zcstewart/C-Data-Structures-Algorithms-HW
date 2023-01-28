@@ -3,7 +3,7 @@
 /*
  *  Filename:           newString.cpp
  * 
- *  Purpose:            The purpose of this program is to 
+ *  Purpose:            Implementaiton file for newString.h 
  * 
  *  Author:             Zachary Charles Stewart
  *  Student ID:         105903414

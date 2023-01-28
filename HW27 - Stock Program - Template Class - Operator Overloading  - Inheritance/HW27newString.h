@@ -3,7 +3,7 @@
 /*
  *  Filename:           newString.h
  * 
- *  Purpose:            The purpose of this program is to 
+ *  Purpose:            Header file for class newString
  * 
  *  Author:             Zachary Charles Stewart
  *  Student ID:         105903414
