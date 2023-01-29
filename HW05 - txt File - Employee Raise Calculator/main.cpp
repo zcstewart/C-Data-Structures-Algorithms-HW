@@ -6,7 +6,7 @@
  *  Purpose:            The purpose of this program is to read input from a 
  *                      txt file, and write output to a txt file. The 
  *                      information read in is in the order last name, 
- *                      first name, salary, and percent raise. The output 
+ *                      first name, salary, and percent amountRaise. The output 
  *                      text file will write data in the order of first name, 
  *                      last name, and new salary.
  * 
@@ -31,7 +31,7 @@ using namespace std;
 string dollarConvert(double amt)
 {
     stringstream dollarAmt;
-    dollarAmt.imbue(locale("en_US.UTF8"));
+    dollarAmt.imbue(std::locale("en-US.UTF8"));
     dollarAmt << fixed << showpoint << setprecision(2) << amt;
     return dollarAmt.str();
 }
@@ -39,9 +39,9 @@ string dollarConvert(double amt)
 int main(int argc, char** argv)
 {
     //Declare variables for use in program
-    string name_First, name_Last, name_Full;
-    double salary, raise, per_raise, sal2;
-    int fileLength, sal1;
+    string nameFirst, nameLast, nameFull;
+    double salary, amountRaise, percentamountRaise;
+    int fileLength;
     
     //Declare file stream variables
     ifstream inData;
@@ -55,7 +55,7 @@ int main(int argc, char** argv)
         cout << "Failed to open file" << endl;
         exit(EXIT_FAILURE);
     }
-    outData.open("SalaryRaises.txt");
+    outData.open("SalaryamountRaises.txt");
     
     //Determine length of file to be used with for loop
     fileLength = count(istreambuf_iterator <char> (inData), 
@@ -68,20 +68,20 @@ int main(int argc, char** argv)
     for(int i = 0; i < fileLength; i++)
     {
         //Read data in from SalaryData.txt
-        inData >> name_Last >> name_First >> salary >> per_raise;
+        inData >> nameLast >> nameFirst >> salary >> percentamountRaise;
         
         //Determine full name
-        name_Full = name_First + " " + name_Last;
+        nameFull = nameFirst + " " + nameLast;
         
-        //Compute raise
-        raise = salary * (per_raise / 100.0);
+        //Compute amountRaise
+        amountRaise = salary * (percentamountRaise / 100.0);
         
-        //Add raise to salary
-        salary = salary + raise;
+        //Add amountRaise to salary
+        salary = salary + amountRaise;
                 
-        //Write data out to SalaryRaises.txt
+        //Write data out to SalaryamountRaises.txt
         outData << fixed << showpoint << setprecision(2) << setw(14) << left;  
-        outData << name_Full << "\t" << "$" << dollarConvert(salary) << endl;
+        outData << nameFull << "\t" << "$" << dollarConvert(salary) << endl;
     }
     
     //Close the text files upon completion
