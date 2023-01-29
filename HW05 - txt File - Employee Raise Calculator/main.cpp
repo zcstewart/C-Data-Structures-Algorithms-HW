@@ -28,25 +28,34 @@ using namespace std;
 
 //User defined function to covert a double to its dollar amount
 //Accomplished with the imbue function and a stringstream
+
+/* --- Can't get imbue function to run & compile --- 
 string dollarConvert(double amt)
 {
+
     stringstream dollarAmt;
-    locale myLocale("en_US.UTF-8");
-    dollarAmt.imbue(myLocale);
+    dollarAmt.imbue(locale("ENGLISH_US"));
     dollarAmt << fixed << showpoint << setprecision(2) << amt;
     return dollarAmt.str();
+
 }
+*/
+
 
 int main(int argc, char** argv)
 {
+
+
     //Declare variables for use in program
     string nameFirst, nameLast, nameFull;
-    double salary, amountRaise, percentamountRaise;
+    double salary, amountRaise, percentRaise;
     int fileLength;
     
     //Declare file stream variables
     ifstream inData;
     ofstream outData;
+
+    //std::wcout << "User-preferred locale setting is: " << std::locale("").name().c_str() << endl;
     
     //Associate the file stream variables with input and output txt files
     inData.open("SalaryData.txt");
@@ -69,20 +78,20 @@ int main(int argc, char** argv)
     for(int i = 0; i < fileLength; i++)
     {
         //Read data in from SalaryData.txt
-        inData >> nameLast >> nameFirst >> salary >> percentamountRaise;
+        inData >> nameLast >> nameFirst >> salary >> percentRaise;
         
         //Determine full name
         nameFull = nameFirst + " " + nameLast;
         
         //Compute amountRaise
-        amountRaise = salary * (percentamountRaise / 100.0);
+        amountRaise = salary * (percentRaise / 100.0);
         
         //Add amountRaise to salary
-        salary = salary + amountRaise;
+        salary += amountRaise;
                 
         //Write data out to SalaryamountRaises.txt
-        outData << fixed << showpoint << setprecision(2) << setw(14) << left;  
-        outData << nameFull << "\t" << "$" << dollarConvert(salary) << endl;
+        outData << fixed << showpoint << setprecision(2) << setw(14) << left;
+        outData << nameFull << "\t" << "$" << salary << endl;
     }
     
     //Close the text files upon completion
