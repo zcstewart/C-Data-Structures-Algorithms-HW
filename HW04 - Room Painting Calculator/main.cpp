@@ -31,28 +31,28 @@ int main(int argc, char** argv)
     const float squareFeetPerGallon = 120;
     
     //Declare variables for the length, width, and height of the room
-    float lengthR = 0;
-    float widthR = 0;
-    float heightR = 0;
+    float lengthRoom = 0;
+    float widthRoom = 0;
+    float heightRoom = 0;
     
     //Declare variables for the length and width of the door, first window,
     //second window, and third window
-    float lengthD = 0;
-    float widthD = 0;
-    float lengthW1 = 0;
-    float widthW1 = 0;
-    float lengthW2 = 0;
-    float widthW2 = 0;
-    float lengthBS = 0;
-    float widthBS = 0;
+    float heightDoor = 0;
+    float widthDoor = 0;
+    float heightWindow1 = 0;
+    float widthWindow1 = 0;
+    float heightWindow2 = 0;
+    float widthWindow2 = 0;
+    float heightBookshelf = 0;
+    float widthBookshelf = 0;
     
     //Declare variables for the surface area of the room (not including the
     //ceiling), door, first window, second window, and bookshelf
-    float areaR = 0;
-    float areaD = 0;
-    float areaW1 = 0;
-    float areaW2 = 0;
-    float areaBS = 0;
+    float areaRoom = 0;
+    float areaDoor = 0;
+    float areaWindow1 = 0;
+    float areaWindow2 = 0;
+    float areaBookshelf = 0;
     
     //Declare variables for the total paintable area, and amount (gallons) of
     //paint required.
@@ -62,33 +62,33 @@ int main(int argc, char** argv)
     //Prompt user for length, width, and height of the room
     cout << "Enter the length, width, and height of the room in ft: "
          << endl;
-    cin >> lengthR >> widthR >> heightR;
+    cin >> lengthRoom >> widthRoom >> heightRoom;
             
     //Prompt user for the length and width of the door
-    cout << "Enter the length and width of the door in ft: " << endl;
-    cin >> lengthD >> widthD;
+    cout << "Enter the height and width of the door in ft: " << endl;
+    cin >> heightDoor >> widthDoor;
     
     //Prompt user for the length and width of the first window
-    cout << "Enter the length and width of the first window in ft: " << endl;
-    cin >> lengthW1 >> widthW1;
+    cout << "Enter the height and width of the first window in ft: " << endl;
+    cin >> heightWindow1 >> widthWindow1;
     
     //Prompt user for the length and width of the second window
-    cout << "Enter the length and width of the second window in ft: " << endl;
-    cin >> lengthW2 >> widthW2;
+    cout << "Enter the height and width of the second window in ft: " << endl;
+    cin >> heightWindow2 >> widthWindow2;
     
     //Prompt user for the length and width of the bookshelf
-    cout << "Enter the length and width of the bookshelf in ft: " << endl;
-    cin >> lengthBS >> widthBS;
+    cout << "Enter the height and width of the bookshelf in ft: " << endl;
+    cin >> heightBookshelf >> widthBookshelf;
     cout << endl;   
     
     //Calculate paintable area of the room (Area of 4 walls minus the area
     //of the door, first window, second window, and bookshelf)
-    areaR = ( 2 * lengthR * heightR) + (2 * widthR * heightR); 
-    areaD = lengthD * widthD;
-    areaW1 = lengthW1 * widthW1;
-    areaW2 = lengthW2 * widthW2;
-    areaBS = lengthBS * widthBS;
-    paintableArea = areaR - areaD - areaW1 - areaW2 - areaBS;
+    areaRoom = ( 2 * lengthRoom * heightRoom) + (2 * widthRoom * heightRoom); 
+    areaDoor = heightDoor * widthDoor;
+    areaWindow1 = heightWindow1 * widthWindow1;
+    areaWindow2 = heightWindow2 * widthWindow2;
+    areaBookshelf = heightBookshelf * widthBookshelf;
+    paintableArea = areaRoom - areaDoor - areaWindow1 - areaWindow2 - areaBookshelf;
     
     //Calculate gallons of paint required
     gallonsRequired = ceil(paintableArea / squareFeetPerGallon);
