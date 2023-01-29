@@ -2,7 +2,7 @@
 
 /* 
  * Filename:    main.cpp
- * Purpose:     Execution of program through inclusion of files.
+ * Purpose:     Roate Ordered and Unordered Linked List
  * 
  * Author:      Zachary Charles Stewart
  * Student ID:  105903414
