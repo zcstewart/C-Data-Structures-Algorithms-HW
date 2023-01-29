@@ -69,11 +69,13 @@ int main(int argc, char** argv)
 
 //--------------------------------------------------------------------------//
 
-//Function:     
+//Function:         shuntingYard function
 //
-//Inputs:       
-//Outputs:      
-//Purpose:      
+//Inputs:           linkedStackType<char>& stack, linkedQueueType<char>& inQueue, 
+//                  linkedQueueType<char>& outQueue
+//Outputs:          None - void Function
+//Purpose:          Implement the shunting yard algorithm to parse arithmetic 
+//                  expressions to produce a postfix notation string.
 
 void shuntingYard(linkedStackType<char>& stack, 
                   linkedQueueType<char>& inQueue, 
@@ -153,10 +155,12 @@ void shuntingYard(linkedStackType<char>& stack,
 
 //--------------------------------------------------------------------------//
 
-//Function:     
+//Function:             double postfix(linkedStackType<double>& stack, 
+//                      linkedQueueType<char>& outQueue)
 //
-//Inputs:       
-//Outputs:      
+//Inputs:               linkedStackType<double>& stack, 
+//                      linkedQueueType<char>& outQueue
+//Outputs:              double temp1 
 //Purpose:      
 
 double postfix(linkedStackType<double>& stack, 
@@ -167,11 +171,13 @@ double postfix(linkedStackType<double>& stack,
     double temp1, temp2;
     while(!outQueue.isEmptyQueue())
     {
+        //While queue isn't empty, read char at front
         read = outQueue.front();
         if(read == '0' || read == '1' || read == '2' || read == '3' || 
            read == '4' || read == '5' || read == '6' || read == '7' || 
            read == '8' || read == '9')
         {
+            //Convert char number to double number
             switch(read)
             {
                 case '0': 
@@ -207,21 +213,27 @@ double postfix(linkedStackType<double>& stack,
                 default:
                     input = 0;
                     break;
-            }       
+            }
+            //Add to stack       
             stack.push(input);
             
         }
+        //If not number, then operator
+        //Determine operator precedence (^*/+-)
         else
         {
             if(read == '^')
             {
+                //Save top of stack, then remove
                 temp1 = stack.top();
                 stack.pop();
-                if(!stack.isEmptyStack())
+                //If empty, then exit failure
+                if(stack.isEmptyStack())
                 {
                     cout << "Not enough tokens!" << endl;
                     exit(EXIT_FAILURE);
                 }
+                //Otherwise, save new top of stack
                 else
                 {
                     temp2 = stack.top();
@@ -232,13 +244,16 @@ double postfix(linkedStackType<double>& stack,
             
             else if(read == '*')
             {
+                //Save top of stack, then remove
                 temp1 = stack.top();
                 stack.pop();
+                //If empty, then exit failure
                 if(stack.isEmptyStack())
                 {
                     cout << "Not enough tokens!" << endl;
                     exit(EXIT_FAILURE);
                 }
+                //Otherwise, save new top of stack
                 else    
                 {
                     temp2 = stack.top();
@@ -335,23 +350,29 @@ double postfix(linkedStackType<double>& stack,
 
 //--------------------------------------------------------------------------//
 
-//Function:     
+//Function:             void run(linkedQueueType<char>& inQueue)
 //
-//Inputs:       
-//Outputs:      
-//Purpose:      
+//Inputs:               linkedQueueType<char>& inQueue
+//Outputs:              None - void function
+//Purpose:              The purpose of this program is to create an input 
+//                      queue (linkedQueueType<char>& inQueue) to prompt user 
+//                      to input a mathematical function and store to a queue 
+//                      for later processing.
 
 void run(linkedQueueType<char>& inQueue)
 {
+    //c-string array to store input
     char input[80];
     
+    //prompt user for input
     cout << "Enter a mathematical expression to evaluate: " << endl;
     cin >> input;
-    int length;
 
-    length = strlen(input);
+    //determine lenth of input string, then parse through each character
+    int length = strlen(input);
     for(int i = 0; i < length; i++)
     {
+        //If numeric character or mathematical operator then add to queue
         if(input[i] == '0' || input[i] == '1' || input[i] == '2' 
                            || input[i] == '3' || input[i] == '4' 
                            || input[i] == '5' || input[i] == '6' 
@@ -362,6 +383,7 @@ void run(linkedQueueType<char>& inQueue)
         {
             inQueue.addQueue(input[i]);
         }
+        //Print index
         cout << "Iteration: " << i << endl;
         cout << endl;
     }

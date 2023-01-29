@@ -4,7 +4,7 @@
  *  Filename:           main.cpp
  * 
  *  Purpose:            This program introduces students to their first c++
- *                      program. Thank god it doesn't say "Hello World".
+ *                      program. Betcha thought it would say "Hello World".
  * 
  *  Author:             Zachary Charles Stewart
  *  Student ID:         105903414

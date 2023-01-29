@@ -2,7 +2,9 @@
 
 /* 
  * Filename:    main.cpp
- * Purpose:     Execution of program through inclusion of files.
+ * Purpose:     This program expands on the Ordered and Unordered Linked
+ *              List rotation splitting even and odd elements into their
+ *              own separate Linked Lists.
  * 
  * Author:      Zachary Charles Stewart
  * Student ID:  105903414
