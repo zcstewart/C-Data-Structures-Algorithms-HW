@@ -31,7 +31,8 @@ using namespace std;
 string dollarConvert(double amt)
 {
     stringstream dollarAmt;
-    dollarAmt.imbue(std::locale("en-US.UTF8"));
+    locale myLocale("en_US.UTF-8");
+    dollarAmt.imbue(myLocale);
     dollarAmt << fixed << showpoint << setprecision(2) << amt;
     return dollarAmt.str();
 }
