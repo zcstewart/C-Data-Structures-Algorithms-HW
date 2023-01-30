@@ -125,7 +125,7 @@ int main(int argc, char** argv) {
         exit(EXIT_FAILURE);
     }
     
-    //Call get Data function to load data from text file
+    //Call getData function to load data from text file
     getData(inFile, player);
 
     //Switch statement to select menu option
@@ -484,8 +484,7 @@ void updateCatches(footBallPlayerType list[N], int catches, int playerNum)
 }
 
 // Update the number of passing yards for a player
-void updatePassingYards(footBallPlayerType list[N], int passYards,
-                        int playerNum) 
+void updatePassingYards(footBallPlayerType list[N], int passYards, int playerNum) 
 {
     //Inputs:   footBallPlayerType list[N]
 //          int passYards
@@ -508,8 +507,7 @@ void updatePassingYards(footBallPlayerType list[N], int passYards,
 }
 
 // Update the number of receiving yards for a player
-void updateReceivingYards(footBallPlayerType list[N], int recYards,
-        int playerNum) 
+void updateReceivingYards(footBallPlayerType list[N], int recYards, int playerNum) 
 {
     //Inputs:   footBallPlayerType list[N]
 //          int recYards
@@ -533,8 +531,7 @@ void updateReceivingYards(footBallPlayerType list[N], int recYards,
 }
 
 // Update the number of rushing yards for a player
-void updateRushingYards(footBallPlayerType list[N], int rushYards,
-        int playerNum) 
+void updateRushingYards(footBallPlayerType list[N], int rushYards, int playerNum) 
 {
     //Inputs:   footBallPlayerType list[N]
 //          int rushYards

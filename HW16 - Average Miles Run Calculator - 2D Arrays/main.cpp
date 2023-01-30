@@ -7,8 +7,8 @@
  *                      number of miles run by five different people for 
  *                      seven days of the week. The program will take
  *                      the data and store it into appropriately sized arrays.
- *                      A 1-D Array will be used to store the names, a 2-D
- *                      A 2-D ARray with five rows and seven columns will
+ *                      A 1-D Array will be used to store the names,
+ *                      A 2-D Array with five rows and seven columns will
  *                      be created to store the miles run by each runner
  *                      on each day. Another 1-D Array will be created to store
  *                      the average number of miles run each day.
@@ -74,7 +74,7 @@ int main(int argc, char** argv)
     //Open data file. Use c_str function to convert to a c-string to allow
     //the file to be opened
     inData.open(fileName);
-    outData.open("LogRunner");
+    outData.open("LogRunner.txt");
     
     //Terminate program if file not opened.
     if(!inData)
@@ -148,34 +148,34 @@ void printData(string runners[numRunners], double data[numRunners][numDays],
                double totalMiles[numRunners], double averageMiles[numDays])
 {
     string s1 = "Name";
-    string s2 = "Day 1";
-    string s3 = "Day 2";
-    string s4 = "Day 3";
-    string s5 = "Day 4";
-    string s6 = "Day 5";
-    string s7 = "Day 6";
-    string s8 = "Day 7";
+    string s2 = "Day 1 ";
+    string s3 = "Day 2 ";
+    string s4 = "Day 3 ";
+    string s5 = "Day 4 ";
+    string s6 = "Day 5 ";
+    string s7 = "Day 6 ";
+    string s8 = "Day 7 ";
     string s9 = "Total";
-    string s10 = "Ave Miles";
+    string s10 = "Avg Miles";
     
     cout << left;
-    cout << setw(10) << s1;
-    cout << setw(6) << s2;
-    cout << setw(6) << s3;
-    cout << setw(6) << s4;
-    cout << setw(6) << s5;
-    cout << setw(6) << s6;
-    cout << setw(6) << s7;
-    cout << setw(6) << s8;
-    cout << setw(6) << s9 << endl;
+    cout << setw(14) << s1;
+    cout << setw(8) << s2;
+    cout << setw(8) << s3;
+    cout << setw(8) << s4;
+    cout << setw(8) << s5;
+    cout << setw(8) << s6;
+    cout << setw(8) << s7;
+    cout << setw(8) << s8;
+    cout << setw(8) << s9 << endl;
     cout.unsetf(ios::left);
     
     for(int row = 0; row < numRunners; row++)
     {
-        cout << left << setw(10) << runners[row];
+        cout << left << setw(14) << runners[row];
         for(int col = 0; col < numDays; col++)
         {
-            cout << setw(6) << fixed << showpoint << setprecision(1);
+            cout << setw(8) << fixed << showpoint << setprecision(1);
             cout << data[row][col];
         }
         cout.unsetf(ios::left);
@@ -183,11 +183,11 @@ void printData(string runners[numRunners], double data[numRunners][numDays],
         cout << endl;
     }
     cout << endl;
-    cout << left << setw(6) << s10;
+    cout << left << setw(8) << s10;
     cout.unsetf(ios::left);
     for(int col = 0; col < numDays; col++)
     {
-        cout << setw(7) << fixed << showpoint << setprecision(1);
+        cout << setw(8) << fixed << showpoint << setprecision(1);
         cout << averageMiles[col];
     }
 }

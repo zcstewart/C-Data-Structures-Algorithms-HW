@@ -1,0 +1,5 @@
+John 1 2 3 4 5 6 7
+Shannon 1 5 0 5 0 5 3
+Mike 3 4 3 1 7 4 2
+Cali 2 2 2 4 4 3 1
+Carl 1 0 1 2 0 2 1
