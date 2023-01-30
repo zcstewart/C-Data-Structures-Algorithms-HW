@@ -14,8 +14,6 @@
  *  Date:               1/31/2017 15:34 PST
  */
 
-
-
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -39,7 +37,7 @@ extern const int N;
 //Purpose:  Execute program with supplied functions
 
 int main(int argc, char** argv) {
-    //Declare array of structures (footballPlayerType)
+    //Declare array of structures (footBallPlayerType)
     footBallPlayerType player[N];
     //Variables for switch statement
     int input = 0;
