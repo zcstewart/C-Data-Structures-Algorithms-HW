@@ -34,9 +34,9 @@ int main(int argc, char** argv) {
     char junk;
     
     //Prompt user to enter two points
-    cout << "Please enter the first x,y point: " << endl;
+    cout << "Please enter the first x,y point with format \"x,y\": " << endl;
     cin >> x1 >> junk >> y1;
-    cout << "Please enter the second x,y point: " << endl;
+    cout << "Please enter the second x,y point with format \"x,y\": " << endl;
     cin >> x2 >> junk >> y2;
     cout << endl << endl;
     

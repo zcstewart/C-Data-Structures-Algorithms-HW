@@ -43,7 +43,7 @@ int main(int argc, char** argv)
     cin >> radius_R;
     cout << endl;
     
-     //Initialize variables to initial conditions of cone.
+    //Initialize variables to initial conditions of cone.
     arc_x = 0;
     radius_r = 0;
     height_h = radius_R;   

@@ -39,7 +39,7 @@ int main(int argc, char** argv)
     char junk;
     
     //Imbue correct local
-    cout.imbue(locale("en_US.UTF-8"));
+    //cout.imbue(locale("en_US.UTF-8"));
    
     //Prompt user for input
     cout << "Enter the number of apartments: " << endl;

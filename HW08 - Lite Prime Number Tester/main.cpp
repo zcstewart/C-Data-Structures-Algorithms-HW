@@ -36,6 +36,8 @@ int main(int argc, char** argv)
     bool isPrime = true;
     
     //Prompt user for input
+    cout << "Hello!" << endl;
+    cout << "The purpose of this program is to test if a user-provided integer is prime." << endl;
     cout << "Enter a positive integer between 1-1000: " << endl;
     cin >> num;
     cout << endl;
