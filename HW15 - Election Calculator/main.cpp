@@ -3,7 +3,8 @@
 /*
  *  Filename:           main.cpp
  * 
- *  Purpose:            The purpose of this program is to 
+ *  Purpose:            The purpose of this program is to determine the winner
+ *                      of an election 
  * 
  *  Author:             Zachary Charles Stewart
  *  Student ID:         105903414
@@ -20,12 +21,13 @@
 //Namespace
 using namespace std;
 
-//Declare global constant N
+//Declare global constant N for number of candidates
 const int N = 5;
-const int P = 3;
+
 //--------------------------------------------------------------------------//
 
 //Function Definitions
+
 // Reads in the Voting Data
 void getVotes(string candidates[N], int votes[N], int &totalVotes);
 
@@ -36,21 +38,22 @@ void calculatePercentages(const int votes[N], const int totalVotes,
 // Calculates the Election Winner
 void calculateWinner(const int votes[N], int &winnerIndex);
 
-// Prints the Election Results
+// Prints the Election Results to Terminal
 void printResults(const string candidates[N], const int votes[N],
                   const int totalVotes, const double percentages[N],
                   const int winnerIndex); 
 
 //--------------------------------------------------------------------------//
 
+// Main function
 int main(int argc, char** argv)
 {
-    string name[N] = {""};
-    int votes[N] = {0};
-    int num_votes = 0;
-    int wIndex;
-    double percent_votes[N] = {0};
-    cout.imbue(locale("en_US.UTF-8"));
+    string name[N] = {};    // Array of strings for candidate names
+    int votes[N] = {0};     // Array of integers for vote count
+    int num_votes = 0;      // Integer for total number of votes
+    int wIndex;             // Integer for winnder index
+    double percent_votes[N] = {0};  // Double array containing percent of total vote
+    //cout.imbue(locale("en_US.UTF-8"));
      
     getVotes(name, votes, num_votes);
     calculatePercentages(votes, num_votes, percent_votes);
@@ -62,7 +65,12 @@ int main(int argc, char** argv)
 
 //--------------------------------------------------------------------------//
 
-
+//Function:     void getVotes(string candidates[N], int votes[N], int &totalVotes)
+//
+//Inputs:       string candidates[N], int votes[N], int &totalVotes
+//Outputs:      void
+//Purpose:      The purpose of this function is to prompt the user for candidate names
+//              and the amount of votes they received, then store in separate arrays
 void getVotes(string candidates[N], int votes[N], int &totalVotes)
 {
     if(!cin)
@@ -70,16 +78,23 @@ void getVotes(string candidates[N], int votes[N], int &totalVotes)
         cout << "Invalid input stream" << endl;
         exit(EXIT_FAILURE);
     }
+
+    //Prompt user to enter candidate name and votes received
     for(int i = 0; i < N ; i++)
     {
-        cout << "Enter candidate name and number of votes" << endl;
+        cout << "Enter candidate name and number of votes (ex: Donald 50): " << endl;
         cin >> candidates[i] >> votes[i];
         totalVotes += votes[i];
-    }
+    }// Calculates the Voting Percentages
     cout << endl << endl;
 }
 
-// Calculates the Voting Percentages
+//Function:     calculatePercentages(const int votes[N], const int totalVotes, double percentages[N])
+//
+//Inputs:       const int votes[N], const int totalVotes, double percentages[N]
+//Outputs:      void
+//Purpose:      The purpose of this function is to calculate the percentage of the total vote each
+//              candidate received
 void calculatePercentages(const int votes[N], const int totalVotes,
                           double percentages[N])
 {
@@ -91,7 +106,13 @@ void calculatePercentages(const int votes[N], const int totalVotes,
     }
 }
 
-// Calculates the Election Winner
+//Function:     void calculateWinner(const int votes[N], int &winnerIndex)
+//
+//Inputs:       const int votes[N], int &winnerIndex
+//Outputs:      void
+//Purpose:      The purpose of this function is to calculate the winner of the election
+//              by returning (through reference) the index of the candidate with the most
+//              votes
 void calculateWinner(const int votes[N], int &winnerIndex)
 {
     winnerIndex = 0;
@@ -104,34 +125,43 @@ void calculateWinner(const int votes[N], int &winnerIndex)
     }
 }
 
-// Prints the Election Results
+//Function:     void printResults(const string candidates[N], const int votes[N], 
+//                                const int totalVotes, const double percentages[N],
+//                                const int winnerIndex)
+//
+//Inputs:       (const string candidates[N], const int votes[N], 
+//               const int totalVotes, const double percentages[N],
+//               const int winnerIndex)
+//Outputs:      void
+//Purpose:      The purpose of this function is to print a table of the candidates,
+//              votes received, percentage of total vote, total votes, and winner of the 
+//              election using formatting.
 void printResults(const string candidates[N], const int votes[N],
                   const int totalVotes, const double percentages[N],
                   const int winnerIndex)
 {
-    string s1 = "Candidate";
-    string s2 = "Votes Received";
-    string s3 = "% of Total Votes";
+    string candidate = "Candidate";
+    string recievedVotes = "Votes Received";
+    string percentVotes = "\% of Total Votes";
     
-    string s4 = "Total:";
-    string s5 = "The Winner of the Election is ";
+    string sumVotes = "Total:";
+    string electionWinner = "The Winner of the Election is: ";
     
-    cout << left << setw(20) << s1 << setw(20) << s2
-                 << setw(20) << s3 << endl << endl;
+    cout << left << setw(20) << candidate << setw(20) << recievedVotes
+                 << setw(20) << percentVotes << endl << endl;
 
     for(int i = 0; i < N; i++)
     {
         cout << left;
-        cout << setw(13) << candidates[i];
-        cout.unsetf(ios::left);
-        cout << setw(13) << votes[i];
-        cout << fixed << showpoint << setprecision(2) << setw(13);
+        cout << setw(20) << candidates[i];
+        cout << setw(20) << votes[i];
+        cout << fixed << showpoint << setprecision(2) << setw(20);
         cout << percentages[i];
         cout << endl << endl;
     }
     cout.unsetf(ios::fixed);
-    cout << left << setw(10) << s4;
-    cout << setw(10) << totalVotes << endl << endl;
-    cout << setw(10) <<s5<< candidates[winnerIndex];
+    cout << left << setw(20) << sumVotes;
+    cout << setw(20) << totalVotes << endl << endl;
+    cout << setw(20) <<electionWinner<< candidates[winnerIndex];
     cout << endl << endl;
 }
