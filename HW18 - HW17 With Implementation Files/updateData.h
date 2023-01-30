@@ -1,12 +1,12 @@
 /* 
- * File:   menu.h
+ * File:   updateData.h
  * Author: scooby
  *
  * Created on February 7, 2017, 7:23 AM
  */
 
-#ifndef MENU_H
-#define MENU_H
+#ifndef UPDATEDATA_H
+#define UPDATEDATA_H
 
 #include<iostream>
 #include<fstream>
@@ -55,5 +55,5 @@ void printPlayerData(footBallPlayerType list[N],
         int playerNum);
 
 //--------------------------------------------------------------------------//
-#endif /* MENU_H */
+#endif /* UPDATEDATA_H */
 
