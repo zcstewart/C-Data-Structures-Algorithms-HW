@@ -2,7 +2,6 @@
  */
 
 #include "updateData.h"
-#include <iomanip>
 
 using namespace std;
 
@@ -29,6 +28,53 @@ void showMenu()
     }
 }
 
+// Get team data from the input file
+void getData(ifstream &inputFile, footBallPlayerType list[N])
+//Inputs:   ifstream &inputFile
+//          footBallPlayertype list[N]
+//Output:   None, return type void
+//Purpose:  The purpose of this function is to cycle through an array of
+//          Structures (of type footBallPlayerType), and read in values
+//          to the data members of the structure from a predetermined
+//          text file.
+
+{
+    //Cycle through array
+    for (int i = 0; i < N; i++) 
+    {
+        //Read in player data
+        inputFile >> list[i].player_lastName;
+        inputFile >> list[i].player_position;
+        inputFile >> list[i].player_numTD;
+        inputFile >> list[i].player_numRec;
+        inputFile >> list[i].player_PassYd;
+        inputFile >> list[i].player_RecYd;
+        inputFile >> list[i].player_RushYd;
+    }
+}
+
+// Save current team data to output file
+void saveData(ofstream &outputFile, footBallPlayerType list[N]) 
+{
+//Inputs:   ofstream &outputFile
+//          footBallPlayerType list[N]
+//Outputs:  None, return type void
+//Purpose:  The purpose of this function is to write an array of structures
+//          (of type footBallPlayerType) to a predetermined output text file.
+    
+    //Cycle through array
+    for (int i = 0; i < N; i++) 
+    {
+        //Read out player data
+        outputFile << list[i].player_lastName << " ";
+        outputFile << list[i].player_position << " ";
+        outputFile << list[i].player_numTD << " ";
+        outputFile << list[i].player_numRec << " ";
+        outputFile << list[i].player_PassYd << " ";
+        outputFile << list[i].player_RecYd << " ";
+        outputFile << list[i].player_RushYd << endl;
+    }
+}
 
 // Print entire team data to the screen
 void printData(footBallPlayerType list[N]) 
@@ -79,52 +125,4 @@ void printPlayerData(footBallPlayerType list[N], int playerNum)
     cout << endl;
     cout << "  Rushing Yards = " << list[playerNum].player_RushYd << endl;
     cout << endl << endl;
-}
-
-// Get team data from the input file
-void getData(ifstream &inputFile, footBallPlayerType list[N])
-//Inputs:   ifstream &inputFile
-//          footBallPlayertype list[N]
-//Output:   None, return type void
-//Purpose:  The purpose of this function is to cycle through an array of
-//          Structures (of type footBallPlayerType), and read in values
-//          to the data members of the structure from a predetermined
-//          text file.
-
-{
-    //Cycle through array
-    for (int i = 0; i < N; i++) 
-    {
-        //Read in player data
-        inputFile >> list[i].player_lastName;
-        inputFile >> list[i].player_position;
-        inputFile >> list[i].player_numTD;
-        inputFile >> list[i].player_numRec;
-        inputFile >> list[i].player_PassYd;
-        inputFile >> list[i].player_RecYd;
-        inputFile >> list[i].player_RushYd;
-    }
-}
-
-// Save current team data to output file
-void saveData(ofstream &outputFile, footBallPlayerType list[N]) 
-{
-//Inputs:   ofstream &outputFile
-//          footBallPlayerType list[N]
-//Outputs:  None, return type void
-//Purpose:  The purpose of this function is to write an array of structures
-//          (of type footBallPlayerType) to a predetermined output text file.
-    
-    //Cycle through array
-    for (int i = 0; i < N; i++) 
-    {
-        //Read out player data
-        outputFile << list[i].player_lastName << " ";
-        outputFile << list[i].player_position << " ";
-        outputFile << list[i].player_numTD << " ";
-        outputFile << list[i].player_numRec << " ";
-        outputFile << list[i].player_PassYd << " ";
-        outputFile << list[i].player_RecYd << " ";
-        outputFile << list[i].player_RushYd << endl;
-    }
 }

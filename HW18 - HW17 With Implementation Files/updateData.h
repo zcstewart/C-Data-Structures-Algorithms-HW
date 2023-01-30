@@ -11,6 +11,7 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include<iomanip>
 
 using namespace std;
 
@@ -40,19 +41,16 @@ const int N = 10;
 void showMenu();
 
 // Get team data from the input file
-void getData(ifstream &inputFile,
-        footBallPlayerType list[N]);
+void getData(ifstream &inputFile, footBallPlayerType list[N]);
 
 // Save current team data to output file
-void saveData(ofstream &outputFile,
-        footBallPlayerType list[N]);
+void saveData(ofstream &outputFile, footBallPlayerType list[N]);
 
 // Print entire team data to the screen
 void printData(footBallPlayerType list[N]);
 
 // Print a single playerâ€™s data to the screen
-void printPlayerData(footBallPlayerType list[N],
-        int playerNum);
+void printPlayerData(footBallPlayerType list[N], int playerNum);
 
 //--------------------------------------------------------------------------//
 #endif /* UPDATEDATA_H */

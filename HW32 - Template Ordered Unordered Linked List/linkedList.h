@@ -1,7 +1,7 @@
 //Homework 34
 
 /* 
- * Filename:        linkedLIst.h
+ * Filename:        linkedList.h
  * Purpose:         Definition and Implementation of linkedListType
  *                  class
  * 

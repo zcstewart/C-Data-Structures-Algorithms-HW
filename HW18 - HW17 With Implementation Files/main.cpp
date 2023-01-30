@@ -14,8 +14,7 @@
  *  Date:               1/31/2017 15:34 PST
  */
 
-#include "updateData.h"
-#include "updatePlayer.h"
+
 
 #include <cstdlib>
 #include <iostream>
@@ -23,6 +22,8 @@
 #include <fstream>
 #include <iomanip>
 
+#include "updateData.h"
+#include "updatePlayer.h"
 
 //Namespace
 using namespace std;
