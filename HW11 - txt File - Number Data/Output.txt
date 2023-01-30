@@ -1,0 +1,10 @@
+   10    4    5 2334   62   47   76   32   44  -12
+   -2  334   41   34    4  -45   -2   -5   -4   -2
+   -4   -5    0    0    0    1    2    4
+
+Number of values in data file: 28
+Total number of evens: 21
+Total number of odds: 7
+Total number of zeros: 3
+Sum of the numbers: 2953
+Average of numbers: 105.5

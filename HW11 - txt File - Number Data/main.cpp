@@ -103,12 +103,20 @@ int main(int argc, char** argv)
             outFile << endl;
         }
     }
+
+    
+
     //Compute average, static cast as double to avoid integer division
     num_average = static_cast<double>(num_sum) / num_total;
     
     //Print results of number classification
     printResults(num_total, num_even, num_odd, num_zero, num_sum, 
                  num_average, outFile);
+
+    cout << endl << endl;
+
+    cout << "Complete" << endl;
+    cout << "Please review \'Output.txt\'" << endl;
 
     //Close files
     inFile.close();

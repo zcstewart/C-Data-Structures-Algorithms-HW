@@ -58,6 +58,14 @@ int main(int argc, char** argv)
     exit(EXIT_SUCCESS);
 }
 
+//--------------------------------------------------------------------------//
+
+//Function:     string convertName(string name)
+//
+//Inputs:       string name
+//Outputs:      string
+//Purpose:      Function that reads name in format (Last, First Middle) then
+//              converts to (First Middle Last)
 string convertName(string name)
 {
     string name_First, name_Middle, name_Last, name_Final;

@@ -44,20 +44,21 @@ int main(int argc, char** argv)
     //Prompt user for input
     cout << "Enter the number of apartments: " << endl;
     cin >> apt_num;
-    cout << "Enter the rent for each apartment: " << endl;
+    cout << "Enter the rent for each apartment (including $): " << endl;
     cin >> junk >> apt_rent;
-    cout << "Enter the rent increase that leads to a vacant unit: " << endl;
+    cout << "Enter the rent increase that leads to a vacant unit (including $): " << endl;
     cin >> junk >> apt_upRent;
-    cout << "Enter the maintenance costs for each rented apartment: " << endl;
+    cout << "Enter the maintenance costs for each rented apartment (including $): " << endl;
     cin >> junk >> apt_maintenance;
     cout << endl;
     
     //While loop to calculate each rent
     while(apt_num > 0)
     {
+        //Profit = total rent from number of apartments - total maintenance costs for each apartment
         apt_profit = (apt_num * apt_rent) - (apt_num * apt_maintenance);
         
-        //Test profit to see if it is max value
+        //Raise rent until no apartments occupied, then determine optimized profit
         if(apt_profit > ideal_profit)
         {
             ideal_profit = apt_profit;
@@ -72,16 +73,13 @@ int main(int argc, char** argv)
     }
     
     //Convert money to be in pennies format for put_money()
-    ideal_rent *= 100;
-    ideal_profit *= 100;
+    //ideal_rent *= 100;
+    //ideal_profit *= 100;
     
     //Output data to user
-    cout << "The monthly rent should be set to " 
-         << put_money(ideal_rent, false) << "." << endl;
-    cout << "The maximum number of units to be rented is: "
-         << ideal_num << "." << endl;
-    cout << "The maximum profit is "
-         << put_money(ideal_profit, false) << endl;
+    cout << "The monthly rent should be set to $" << ideal_rent << "." << endl;
+    cout << "The maximum number of units to be rented is: " << ideal_num << "." << endl;
+    cout << "The maximum profit is $" << ideal_profit << endl;
     
     exit(EXIT_SUCCESS);
 }

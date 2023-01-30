@@ -23,12 +23,22 @@
 #include<iostream>
 #include<cmath>
 
+//Enumeration for "Triangle" data type
 namespace Triangle
 {
     enum triangleType {scalene, isosceles, equilateral, noTriangle};
     triangleType TR;    
 }
 
+//--------------------------------------------------------------------------//
+
+//Function:     Triangle::triangleType triangleShape(int a, int b, int c)
+//
+//Inputs:       int a, int b, int c
+//Outputs:      Triangle triangleType
+//Purpose:      Function that prompts the users for the 3 lengths to determine
+//              if (and what kind) of triangle can be compsed from the three
+//              lengths
 Triangle::triangleType triangleShape(int a, int b, int c);
 
 int main(int argc, char** argv)
@@ -72,19 +82,27 @@ int main(int argc, char** argv)
 Triangle::triangleType triangleShape(int a, int b, int c)
 {
     Triangle::triangleType TR;
+
+    //If one side is longer than two other sides summed,
+    //or one side is zero, then not a triangle
     if(((a + b) <= c) || ((a + c) <= b) || ((b + c) <= a)
             || a == 0 || b == 0 || c == 0)
     {
         return Triangle::noTriangle;
     }
+    //Else if any one side isn't longer than sum of two sides,
+    //and two sides are equal, then equilateral triangle
     else if((a==b) && (b==c))
     {
         return Triangle::equilateral;
     }
+    //If all three sides are equal, then isosceles triangle
     else if((a == b) || (a == c) || (b == c))
     {
         return Triangle::isosceles;
     }
+    //Otherwise, triangle with different side lengths where sum
+    //of any two lengths is greater than other length
     else
     {
         return Triangle::scalene;
