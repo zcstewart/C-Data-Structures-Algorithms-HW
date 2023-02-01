@@ -5,8 +5,8 @@
  * Created on February 7, 2017, 7:40 AM
  */
 
-#ifndef UPDATEPLAYER_H
-#define UPDATEPLAYER_H
+#ifndef UPDATEPLAYER_H_
+#define UPDATEPLAYER_H_
 
 #include"updateData.h"
 #include<iostream>
@@ -39,4 +39,3 @@ void updateRushingYards(footBallPlayerType list[N],
         int rushYards, int playerNum);
 
 #endif /* UPDATEPLAYER_H */
-
