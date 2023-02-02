@@ -1,0 +1,10 @@
+Rodgers QB 40 0 4248 10 120
+Jones RB 12 10 0 326 1847
+Thomas TE 8 46 0 548 0
+Stewart WR 4 69 12 688 65
+Ramsey WR 11 130 0 1673 0
+Allen QB 3 0 132 0 92
+Engram TE 6 34 0 963 0
+Jenkins WR 9 80 0 1158 0
+Taylor RB 3 6 49 82 498
+Leahy WR 5 43 0 344 0

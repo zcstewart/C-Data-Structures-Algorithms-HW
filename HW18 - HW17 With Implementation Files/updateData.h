@@ -5,8 +5,8 @@
  * Created on February 7, 2017, 7:23 AM
  */
 
-#ifndef UPDATEDATA_H
-#define UPDATEDATA_H
+#ifndef UPDATEDATA_H_
+#define UPDATEDATA_H_
 
 #include<iostream>
 #include<fstream>
@@ -54,4 +54,3 @@ void printPlayerData(footBallPlayerType list[N], int playerNum);
 
 //--------------------------------------------------------------------------//
 #endif /* UPDATEDATA_H */
-
