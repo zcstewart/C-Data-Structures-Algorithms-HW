@@ -89,7 +89,7 @@ int main()
     //Output Statements
     cout << "Merchandise should be sold at $" << setprecision(2) << fixed 
          << showpoint << priceMarkup << "." << endl << endl;
-    cout << "With a 15% sale, total revenues are $" << priceSale 
+    cout << "With a 15\% sale, total revenues are $" << priceSale 
          << setprecision(2) << fixed << showpoint << endl << endl;
     cout << "After operating costs, the net profit is $" << profitNet
          << setprecision(2) << fixed << showpoint << "." << endl << endl;
