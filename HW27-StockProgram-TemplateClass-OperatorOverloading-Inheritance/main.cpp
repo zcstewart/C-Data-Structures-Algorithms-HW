@@ -55,8 +55,8 @@ int main(int argc, char** argv)
     }
     
     stockListType testList(40);
-    testList.getList(inData);
-    testList.printReports();    
+    //testList.getList(inData);
+    //testList.printReports();    
     
     //Close inData file
     inData.close();
