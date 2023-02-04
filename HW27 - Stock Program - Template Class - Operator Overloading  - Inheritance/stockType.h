@@ -27,8 +27,7 @@ using namespace std;
 //Class stockType
 class stockType
 {  
-    friend ostream& operator<< (ostream&, const
-    stockType&);
+    friend ostream& operator<< (ostream&, const stockType&);
     friend ifstream& operator>> (ifstream&, stockType&);
 private:
     newString stockSymbol;
@@ -80,22 +79,22 @@ public:
     int getNoOfShares(); 
         
     //Overloading of == operator
-    bool operator==(const stockType &other);
+    bool operator==(const stockType& other) const;
     
     //Overloading of != operator
-    bool operator!=(const stockType &other);
+    bool operator!=(const stockType& other) const;
     
     //Overloading of <= operator
-    bool operator<=(const stockType &other);
+    bool operator<=(const stockType& other) const;
     
     //Overloading of >= operator
-    bool operator>=(const stockType &other);
+    bool operator>=(const stockType& other) const;
     
     //Overloading of > operator
-    bool operator>(const stockType &other);
+    bool operator>(const stockType& other) const;
     
     //Overloading of <= operator
-    bool operator<(const stockType &other); 
+    bool operator<(const stockType& other) const; 
 };
 
 //--------------------------------------------------------------------------//

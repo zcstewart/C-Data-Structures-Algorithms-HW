@@ -26,7 +26,7 @@
 void stockListType::printBySymbol()
 {
     double closingAssets = 0;
-    cout.imbue(locale("en_US.UTF-8"));
+    //cout.imbue(locale("en_US.UTF-8"));
     sortBySymbol();
     cout << "        *********  First Investor's Heaven   *********" << endl;
     cout << "        *********      Financial Report      *********" << endl;
@@ -76,7 +76,7 @@ void stockListType::printBySymbol()
 
 void stockListType::printByGain()
 {
-    cout.imbue(locale("en_US.UTF-8"));
+    //cout.imbue(locale("en_US.UTF-8"));
     sortByGain();
     cout << "        *********  First Investor's Heaven   *********" << endl;
     cout << "        *********     Financial Report       *********" << endl;
@@ -140,7 +140,7 @@ void stockListType::sortBySymbol()
     if(!isEmptyList())
     {
         //Placeholder temp variable
-        stockType rahul;
+        stockType temp;
         for(int i = 0; i < length; i++)
         {
             for(int j = 0; j < length - 1; j++)
@@ -149,9 +149,9 @@ void stockListType::sortBySymbol()
                 if(elements[j] > elements[j+1])
                 {
                     //Swap if items at index j < items at index j+1
-                    rahul = elements[j];
+                    temp = elements[j];
                     elements[j] = elements[j+1];
-                    elements[j+1] = rahul;
+                    elements[j+1] = temp;
                 }
             }
         }
@@ -186,8 +186,7 @@ void stockListType::sortByGain()
     {
         for(int j = 0; j < length-1; j++)
         {
-            if(elements[j].getPercentChange() < 
-               elements[j+1].getPercentChange())
+            if(elements[j].getPercentChange() < elements[j+1].getPercentChange())
             {
                 temp = sortIndiciesGainLoss[j];
                 sortIndiciesGainLoss[j] = sortIndiciesGainLoss[j+1];

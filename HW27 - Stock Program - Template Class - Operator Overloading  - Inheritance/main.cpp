@@ -53,9 +53,9 @@ int main(int argc, char** argv)
         exit(EXIT_FAILURE);
     }
     
-//    stockListType testList(40);
-//    testList.getList(inData);
-//    testList.printReports();    
+    stockListType testList(40);
+    testList.getList(inData);
+    testList.printReports();    
     
     //Close inData file
     inData.close();

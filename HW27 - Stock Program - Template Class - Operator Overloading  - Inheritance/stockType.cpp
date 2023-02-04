@@ -162,7 +162,7 @@ int stockType::getNoOfShares()
 //Purpose:      The purpose of this program is to overload the '==' relational
 //              operator.
 
-bool stockType::operator==(const stockType &other)
+bool stockType::operator==(const stockType& other) const
 {
     return ((stockSymbol == other.stockSymbol)&&
             (todayOpenPrice == other.todayOpenPrice)&&
@@ -182,7 +182,7 @@ bool stockType::operator==(const stockType &other)
 //Outputs:      bool
 //Purpose:      The purpose of this function is to overload the '!='
 //              relational operator for the stockType class.
-bool stockType::operator!=(const stockType &other)
+bool stockType::operator!=(const stockType& other) const
 {
     return ((stockSymbol != other.stockSymbol)||
             (todayOpenPrice != other.todayOpenPrice)||
@@ -202,7 +202,7 @@ bool stockType::operator!=(const stockType &other)
 //Outputs:      bool
 //Purpose:      The purpose of this function is to overload the '<=" 
 //              relational operator for the stockType class.
-bool stockType::operator<=(const stockType &other)
+bool stockType::operator<=(const stockType& other) const
 {
     return(stockSymbol <= other.stockSymbol);
 }
@@ -215,7 +215,7 @@ bool stockType::operator<=(const stockType &other)
 //Outputs:      bool
 //Purpose:      The purpose of this function is to overload the '>=' relational
 //              operator for the stockType class.
-bool stockType::operator>=(const stockType &other)
+bool stockType::operator>=(const stockType& other) const
 {
     return(stockSymbol >= other.stockSymbol);
 }
@@ -228,7 +228,7 @@ bool stockType::operator>=(const stockType &other)
 //Outputs:      bool
 //Purpose:      The purpose of this function is to overload the '>' relational
 //              operator for the stockType class.
-bool stockType::operator>(const stockType &other)
+bool stockType::operator>(const stockType& other) const
 {
     return(stockSymbol > other.stockSymbol);
 }
@@ -241,7 +241,7 @@ bool stockType::operator>(const stockType &other)
 //Outputs:      bool
 //Purpose:      The purpose of this function is to overload the '<' relational
 //              operator for the stockType class.
-bool stockType::operator<(const stockType &other)
+bool stockType::operator<(const stockType& other) const
 {
     return(stockSymbol < other.stockSymbol);
 }
