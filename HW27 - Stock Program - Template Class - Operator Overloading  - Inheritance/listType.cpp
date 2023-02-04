@@ -68,7 +68,7 @@ void listType<Type>::setLength(int len)
 template <class Type>
 int listType<Type>::showLength() const
 {
-    return length();
+    return length;
 }
 
 //--------------------------------------------------------------------------//
@@ -135,7 +135,7 @@ void listType<Type>::deleteItem(Type deleteElement)
     //Search for item
     binarySearch(deleteElement, found, index);
     //If not found
-    if((index < 0 || index >= length) && !found)
+    if((index < 0 || index >= length) || !found)
     {
         cout << "The location of the item to be removed is out of range.";
         cout << endl;
@@ -149,8 +149,8 @@ void listType<Type>::deleteItem(Type deleteElement)
         for(int i = index; i < length - 1; i++)
         {
             elements[i] = elements[i+1];
-            length--;
         }
+        length--;
     }
 }
 
@@ -167,7 +167,7 @@ void listType<Type>::sort()
 {
     assert(!isEmptyList());
     //Placeholder temp variable
-    Type rahul;
+    Type temp;
     for(int i = 0; i < length; i++)
     {
         for(int j = 0; j < length - 1; j++)
@@ -176,9 +176,9 @@ void listType<Type>::sort()
             if(elements[j] > elements[j+1])
             {
                 //Swap if items at index j < items at index j+1
-                rahul = elements[j];
+                temp = elements[j];
                 elements[j] = elements[j+1];
-                elements[j+1] = rahul;
+                elements[j+1] = temp;
             }
         }
     }
@@ -213,7 +213,7 @@ void listType<Type>::print() const
 //              list into the ifstream variable passed in the argument
 //              of the function.
 template <class Type>
-void listType<Type>::getList(ifstream & ifObject)
+void listType<Type>::getList(ifstream& ifObject)
 {
     //Set length to zero
     destroyList();
@@ -237,7 +237,6 @@ void listType<Type>::getList(ifstream & ifObject)
 template <class Type>
 void listType<Type>::destroyList()
 {
-    //"It's Fine" - Dr. Wang
     length = 0;
 }
 

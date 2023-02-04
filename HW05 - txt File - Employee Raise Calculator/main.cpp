@@ -44,7 +44,7 @@ string dollarConvert(double amt)
 
 int main(int argc, char** argv)
 {
-
+    cout << "test" << endl;
 
     //Declare variables for use in program
     string nameFirst, nameLast, nameFull;

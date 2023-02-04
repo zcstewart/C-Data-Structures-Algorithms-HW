@@ -80,7 +80,7 @@ public:
     void print() const;
     // Output the elements of the list
 
-    void getList(ifstream &);
+    void getList(ifstream& ifObject);
     // Read and store elements in the list
     // Postcondition: length = number of elements in
     // the list
