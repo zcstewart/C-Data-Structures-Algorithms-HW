@@ -38,8 +38,8 @@ public:
     //Copy constructor
     ~newString();
     //Destructor
-    char &operator[] (int);
-    const char &operator[](int) const;
+    char& operator[](int);
+    const char& operator[](int) const;
     //overload the relational operators
     bool operator==(const newString&) const;
     bool operator!=(const newString&) const;

@@ -91,7 +91,7 @@ const newString& newString::operator=(const newString& rightStr)
 //Inputs:       int index
 //Outputs:      char&
 //Purpose:      
-char& newString::operator[] (int index)
+char& newString::operator[](int index)
 {
     assert((index >= 0) && (index < strLength));
     return strPtr[index];
