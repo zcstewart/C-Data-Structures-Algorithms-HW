@@ -205,7 +205,7 @@ void stockListType::sortByGain()
 //Purpose:      Constructor implementation for default values upon
 //              instantiation.
 
-stockListType::stockListType()
+stockListType::stockListType() : listType()
 {
     //listType();
     sortIndiciesGainLoss = new int[50];
@@ -219,7 +219,7 @@ stockListType::stockListType()
 //Outputs:      None, Constructor implementation
 //Purpose:      Constructor implementation for Constructor with parameters.
 
-stockListType::stockListType(int size)
+stockListType::stockListType(int size) : listType(size)
 {
     assert(size <= maxSize);
     if(size <= 0)
@@ -227,13 +227,13 @@ stockListType::stockListType(int size)
         cout << "Array must be positive. Creating array of length 50";
         cout << endl;
         sortIndiciesGainLoss = new int[50];
-        listType(50);
+        //listType(50);
         
     }
     else
     {
         sortIndiciesGainLoss = new int[size];
-        listType(size);
+        //listType(size);
     }
     
 }

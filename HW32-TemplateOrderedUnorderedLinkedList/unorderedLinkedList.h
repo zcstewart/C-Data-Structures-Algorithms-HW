@@ -419,7 +419,7 @@ void unorderedLinkedList<Type>::mergeSort()
     recMergeSort(this->first);
     if((this->first) == nullptr)
     {
-        (last) = nullptr;
+        (this->last) = nullptr;
     }
     else
     {

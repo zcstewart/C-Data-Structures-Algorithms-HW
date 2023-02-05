@@ -26,7 +26,7 @@ using namespace std;
 //--------------------------------------------------------------------------//
 
 //class stockListType
-class stockListType:public listType<stockType>
+class stockListType: public listType<stockType>
 {
 public:
     //Prints list sorted by stock symbol

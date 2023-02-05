@@ -529,7 +529,7 @@ void linkedListType<Type>::copyList
 //              implementation of the linkedListType<Type> class. This is 
 //              accomplished by invoking its own destroyList() function.
 template <class Type>
-linkedListType<Type>:: ~ linkedListType() //destructor
+linkedListType<Type>:: ~linkedListType() //destructor
 {
     destroyList();
 }
