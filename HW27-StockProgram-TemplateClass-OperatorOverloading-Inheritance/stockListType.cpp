@@ -176,7 +176,7 @@ void stockListType::sortBySymbol()
 void stockListType::sortByGain()
 {
     int temp;
-    sortBySymbol();
+    //sortBySymbol();
     for(int i = 0; i < length; i++)
     {
         sortIndiciesGainLoss[i] = i;
@@ -207,7 +207,7 @@ void stockListType::sortByGain()
 
 stockListType::stockListType()
 {
-    listType();
+    //listType();
     sortIndiciesGainLoss = new int[50];
 }
 
@@ -228,6 +228,7 @@ stockListType::stockListType(int size)
         cout << endl;
         sortIndiciesGainLoss = new int[50];
         listType(50);
+        
     }
     else
     {
