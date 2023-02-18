@@ -11,14 +11,16 @@
  */
 
 //Preprocessor Directives
-#include <cstdlib>
-#include <iostream>
-#include <fstream>
-
 #include "newString.h"
 #include "listType.h"
 #include "stockType.h"
 #include "stockListType.h"
+
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+
+
 
 //Namespace
 using namespace std;
@@ -55,8 +57,8 @@ int main(int argc, char** argv)
     }
     
     stockListType testList(40);
-    //testList.getList(inData);
-    //testList.printReports();    
+    testList.getList(inData);
+    testList.printReports();  
     
     //Close inData file
     inData.close();

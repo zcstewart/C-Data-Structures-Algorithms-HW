@@ -70,3 +70,5 @@ void linkedStackType<Type>::pop()
     first = first->link;
     delete temp;
 }
+
+#endif

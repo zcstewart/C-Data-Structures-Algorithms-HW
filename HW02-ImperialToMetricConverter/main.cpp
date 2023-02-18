@@ -36,7 +36,7 @@ int main()
     cin >> feet >> inches;
     //Verify user input though output to screen
     cout << endl;
-    cout << " The numbers you entered are " << feet << " for feet and "
+    cout << "3 2The numbers you entered are " << feet << " for feet and "
          << inches << " for inches. " << endl;
     //Convert to total inches
     totalInches = INCHES_PER_FOOT * feet + inches;

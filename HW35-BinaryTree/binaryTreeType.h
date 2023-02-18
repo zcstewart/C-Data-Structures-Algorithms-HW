@@ -14,6 +14,7 @@
 
 //Preprocessor Directives
 #include <cstdlib>
+#include <iostream>
 #include "binaryTreeNode.h"
 
 //Namespace
@@ -313,6 +314,49 @@ elemType binaryTreeType<elemType>::max(elemType x, elemType y) const
         return x;
     else
         return y;
+}
+
+
+//Function
+//
+//Inputs:       
+//Outputs:      
+//Purpose:      
+//              
+template <class elemType>
+int binaryTreeType<elemType>::nodeCount(binaryTreeNode<elemType>* p) const
+{
+	if (p == nullptr)
+	{
+		return 0;
+	}
+    else
+    {
+        return 1 + (nodeCount(p->lLink) + nodeCount(p->rLink));
+    }
+}
+
+//Function      
+//
+//Inputs:       
+//Outputs:      
+//Purpose:      
+//              
+template <class elemType>
+int binaryTreeType<elemType>::leavesCount(binaryTreeNode<elemType>* p) const
+{
+    if (p == nullptr)
+    {
+        return 0;
+    }
+	else if (p->lLink == nullptr && p->rLink == nullptr)
+	{
+		return 1;
+	}
+    else
+    {
+        return (leavesCount(p->lLink) + leavesCount(p->rLink));
+    }
 }
 
 //Function      copyTree(binaryTreeNode<elemType>* &copiedTreeRoot,

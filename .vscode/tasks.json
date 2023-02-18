@@ -3,13 +3,14 @@
         {
             "type": "cppbuild",
             "label": "C/C++: built with g++ version 12.2.0",
-            "command": "C:\\mingw64\\bin\\g++.exe",
+            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "${workspaceFolder}\\*.cpp",
+                "${workspaceFolder}\\HW27-StockProgram-TemplateClass-OperatorOverloading-Inheritance\\*.cpp", 
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}\\main.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"

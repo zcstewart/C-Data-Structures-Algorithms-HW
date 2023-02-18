@@ -207,7 +207,7 @@ void stockListType::sortByGain()
 
 stockListType::stockListType() : listType()
 {
-    //listType();
+    
     sortIndiciesGainLoss = new int[50];
 }
 

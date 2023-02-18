@@ -49,12 +49,16 @@ int main(int argc, char** argv)
 // -999 
     
     cout << "Enter numbers ending with -999: " << endl;
+
     while(input != loopFLAG)
     {
         cin >> input;
-        tree_ONE->insert(input);
-        tree_TWO->insert(input);
-        tree_THREE->insert(input);
+        if (input != loopFLAG)
+        {
+            tree_ONE->insert(input);
+            tree_TWO->insert(input);
+            tree_THREE->insert(input);
+        }
     }
     
     
@@ -77,12 +81,15 @@ int main(int argc, char** argv)
     
     cout << "Tree 1 Height: " << tree_ONE->treeHeight() << endl;
     cout << "Tree 1 Leaves: " << tree_ONE->treeLeavesCount() << endl;
+    cout << "Tree 1 Nodes: " << tree_ONE->treeNodeCount() << endl << endl;
     
     cout << "Tree 2 Height: " << tree_TWO->treeHeight() << endl;
     cout << "Tree 2 Leaves: " << tree_TWO->treeLeavesCount() << endl;
+    cout << "Tree 2 Nodes: " << tree_ONE->treeNodeCount() << endl << endl;
     
     cout << "Tree 3 Height: " << tree_THREE->treeHeight() << endl;
     cout << "Tree 3 Leaves: " << tree_THREE->treeLeavesCount() << endl;
+    cout << "Tree 3 Nodes: " << tree_ONE->treeNodeCount() << endl << endl;
 
     //Terminate program upon successful execution
     exit(EXIT_SUCCESS);

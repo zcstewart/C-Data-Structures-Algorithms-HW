@@ -107,7 +107,7 @@ public:
     // address of the array, length = 0, and
     // maxsize = 50
 
-    ~listType();
+    virtual ~listType();
     // Destructor
     // Delete all elements of the list
     // Postcondition: Array elements is deleted
