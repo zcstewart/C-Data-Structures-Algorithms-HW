@@ -860,7 +860,7 @@ void set<Item>::fix_shortage(int i)
     
     //CASE TWO:
     //Transfer an extra entry from subset[i+1]
--   else if((subset[i+1]->data_count) > MINIMUM && i+1)
+-   else if((subset[i+1]->data_count) > MINIMUM && (i)
     {
         transfer_right(i);
     }

@@ -369,7 +369,7 @@ void run(linkedQueueType<char>& inQueue)
     cin >> input;
 
     //determine lenth of input string, then parse through each character
-    int length = strlen(input);
+    int length = (int)strlen(input);
     for(int i = 0; i < length; i++)
     {
         //If numeric character or mathematical operator then add to queue

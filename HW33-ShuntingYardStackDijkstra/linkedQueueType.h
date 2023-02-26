@@ -68,7 +68,7 @@ void linkedQueueType<Type>::addQueue(const Type& queueElement)
 template <class Type>
 Type linkedQueueType<Type>::front() const
 {
-    unorderedLinkedList<Type>::front();
+    return unorderedLinkedList<Type>::front();
 }
 
 //--------------------------------------------------------------------------//
@@ -76,7 +76,7 @@ Type linkedQueueType<Type>::front() const
 template <class Type>
 Type linkedQueueType<Type>::back() const
 {
-    unorderedLinkedList<Type>::back();
+    return unorderedLinkedList<Type>::back();
 }
 
 //--------------------------------------------------------------------------//
